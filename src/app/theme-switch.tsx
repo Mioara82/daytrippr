@@ -1,47 +1,70 @@
 "use client";
 
-import { useTheme } from "next-themes";
-import { useState, useEffect } from "react";
-import { SunIcon} from "./SVG-components/sun";
+import { useEffect, useState } from "react";
+import { SunIcon } from "./SVG-components/sun";
 import { MoonIcon } from "./SVG-components/moon";
 
 const ThemeSwitch = () => {
-  const [mounted, setMounted] = useState(false);
-  const { theme, setTheme } = useTheme();
+	const [theme, setTheme] = useState<"light" | "dark" | null>("light");
+	const [mounted, setMounted] = useState<boolean>(false);
 
-  useEffect(() => {
-    setMounted(true);
-  }, []);
+	useEffect(() => {
+		const savedTheme = localStorage.getItem("theme") as "light" | "dark" | null;
+		if (savedTheme) {
+			setTheme(savedTheme);
+			document.documentElement.classList.toggle("dark", savedTheme === "dark");
+		} else {
+			if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+				setTheme("dark");
+				document.documentElement.classList.add("dark");
+			} else {
+				setTheme("light");
+				document.documentElement.classList.remove("dark");
+			}
+		}
+		setMounted(true);
+	}, []);
 
-  if (!mounted) {
-    return null;
-  }
+	const toggleTheme = () => {
+		const newTheme = theme === "dark" ? "light" : "dark";
+		setTheme(newTheme);
+		localStorage.setItem("theme", newTheme);
+		document.documentElement.classList.toggle("dark", newTheme === "dark");
+	};
 
-  return (
-    <div>
-    <button
-      className="p-2 border-2 rounded-full flex items-center justify-between w-14 bg-light-lightBg dark:bg-dark-191 dark:text-white"
-      onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-    >
-      {/* Left Icon (Moon) for Light Theme */}
-      <span className={theme === "light" ? "opacity-100" : "opacity-0"}>
-        <MoonIcon />
-      </span>
+	if (!mounted) return null;
 
-      {/* Right Icon (Sun) for Dark Theme */}
-      <span className={theme === "dark" ? "opacity-100" : "opacity-0"}>
-        <SunIcon />
-      </span>
+	return (
+		<div>
+			<button
+				type="button"
+				className="p-2 border-2 rounded-full flex items-center justify-between w-14 bg-primary "
+				onClick={toggleTheme}
+				onKeyDown={(e: React.KeyboardEvent) => {
+					if (e.key === "Enter" || e.key === " ") {
+						toggleTheme();
+					}
+				}}
+				aria-checked={theme === "dark"}
+				role="switch"
+				aria-label="Toggle theme"
+			>
+				<span className={theme === "light" ? "opacity-100" : "opacity-0"}>
+					<MoonIcon />
+				</span>
 
-      {/* Transition animation */}
-      <div
-        className={`transition-all duration-300 transform ${
-          theme === "dark" ? "translate-x-7" : "translate-x-0"
-        } w-6 h-6 bg-yellow-400 rounded-full`}
-      />
-    </button>
-  </div>
-  );
+				<span className={theme === "dark" ? "opacity-100" : "opacity-0"}>
+					<SunIcon />
+				</span>
+
+				<div
+					className={`transition-all duration-300 transform ${
+						theme === "dark" ? "translate-x-7" : "translate-x-0"
+					} w-6 h-6 bg-accent rounded-full`}
+				/>
+			</button>
+		</div>
+	);
 };
 
 export default ThemeSwitch;

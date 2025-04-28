@@ -9,8 +9,8 @@
 
   /*light-color scheme*/
 
-  --color-bg: #f0f0f0;
-  --color-text: #222222;
+  --color-primary: #f0f0f0;
+  --color-secondary: #222222;
   --color-accent: #a3d8f4;
   --color-base: #e2f1e7;
   --color-destructive: #de1a1a;
@@ -37,15 +37,15 @@
     color-scheme: dark;
 
     /*overrides the light color scheme*/
-    --color-bg: #2c3333;
-    --color-text: #ffffff;
+    --color-primary: #2c3333;
+    --color-secondary: #ffffff;
     --color-accent: #0e8388;
     --color-base: #cbe4de;
   }
 
   body {
-    background-color: var(--color-bg);
-    color: var(--color-text);
+    background-color: var(--color-primary);
+    color: var(--color-secondary);
     font-family: var(--font-sans);
   }
 
