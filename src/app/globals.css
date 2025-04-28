@@ -1,26 +1,64 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  /* these are the fonts used throughout the app */
+
+  --font-sans: "Karla", sans-serif;
+  --font-mono: "Noto Mono", monospace;
+  --font-serif: "Noto Serif", serif;
+
+  /*light-color scheme*/
+
+  --color-bg: #f0f0f0;
+  --color-text: #222222;
+  --color-accent: #a3d8f4;
+  --color-base: #e2f1e7;
+  --color-destructive: #de1a1a;
+
+  /*additional colors, to be used later in the app if needed*/
+
+  --color-blue-dark: #7579e7;
+  --color-blue-light: #9ab3f5;
+  --color-blue-lighter: #e2f1e7;
+  --color-teal-dark: #a3d8f4;
+  --color-teal-light: #b9fffc;
+  --color-grey-darkest: #222222;
+  --color-grey-dark: #2c3333;
+  --color-grey-light: #629584;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base {
+  html {
+    color-scheme: light;
+    font-size: 16px;
   }
-}
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  .dark {
+    color-scheme: dark;
+
+    /*overrides the light color scheme*/
+    --color-bg: #2c3333;
+    --color-text: #ffffff;
+    --color-accent: #0e8388;
+    --color-base: #cbe4de;
+  }
+
+  body {
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    font-family: var(--font-sans);
+  }
+
+  button {
+    background-color: var(--color-button);
+    color: var(--color-bg);
+  }
+
+  button:hover {
+    background-color: var(--color-accent-hover);
+  }
+
+  .error {
+    color: var(--color-danger);
+  }
 }
