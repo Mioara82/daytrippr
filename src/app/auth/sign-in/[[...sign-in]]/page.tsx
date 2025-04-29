@@ -6,7 +6,7 @@ import { useHomeRedirect } from "../../hooks";
 
 const LoginPage = () => {
 	const pathname = usePathname();
-	const incorrectPassword = pathname.includes("factor-one");
+	//const incorrectPassword = pathname.includes("factor-one");
 
 	useHomeRedirect();
 
