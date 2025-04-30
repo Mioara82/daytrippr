@@ -38,10 +38,11 @@ const ThemeSwitch = () => {
 		<div>
 			<button
 				type="button"
-				className="p-2 border-2 rounded-full flex items-center justify-between w-14 bg-primary "
+				className="p-2 border-2 rounded-full flex items-center justify-between gap-2 bg-primary "
 				onClick={toggleTheme}
 				onKeyDown={(e: React.KeyboardEvent) => {
 					if (e.key === "Enter" || e.key === " ") {
+						e.preventDefault();
 						toggleTheme();
 					}
 				}}
@@ -49,19 +50,15 @@ const ThemeSwitch = () => {
 				role="switch"
 				aria-label="Toggle theme"
 			>
-				<span className={theme === "light" ? "opacity-100" : "opacity-0"}>
+				<span className={theme === "light" ? "opacity-100" : "opacity-20"}>
 					<MoonIcon />
 				</span>
 
-				<span className={theme === "dark" ? "opacity-100" : "opacity-0"}>
+				<span className={theme === "dark" ? "opacity-100" : "opacity-20"}>
 					<SunIcon />
 				</span>
 
-				<div
-					className={`transition-all duration-300 transform ${
-						theme === "dark" ? "translate-x-7" : "translate-x-0"
-					} w-6 h-6 bg-accent rounded-full`}
-				/>
+				
 			</button>
 		</div>
 	);
