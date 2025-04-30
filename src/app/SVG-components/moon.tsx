@@ -8,6 +8,7 @@ export const MoonIcon = () => {
       stroke="currentColor"
       className="w-6 h-6"
     >
+      <title>Moon Icon</title>
       <path
         strokeLinecap="round"
         strokeLinejoin="round"
