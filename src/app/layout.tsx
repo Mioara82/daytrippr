@@ -1,18 +1,20 @@
 import type { Metadata } from "next";
 import { ClerkProvider } from "@clerk/nextjs";
 import { ThemeProvider } from "./theme-switch";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Roboto, Roboto_Mono } from "next/font/google";
 import DesktopNavbar from "./web/desktop-navbar";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const geistSans = Roboto({
+  variable: "--font-roboto-sans",
   subsets: ["latin"],
+  weight: ["100", "300", "400", "500", "700", "900"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const geistMono = Roboto_Mono({
+  variable: "--font-roboto-mono",
   subsets: ["latin"],
+  weight: ["100", "300", "400", "500", "700"],
 });
 
 export const metadata: Metadata = {
