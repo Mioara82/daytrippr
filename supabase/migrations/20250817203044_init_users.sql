@@ -9,6 +9,13 @@ create table public.users (
 
 alter table public.users enable row level security;
 
+create policy "Users can read themselves" on public.users
+  for select using (owner_id = auth.jwt() ->> 'sub');
+
+-- Let users create their own user row (optional if you only create via service role)
+create policy "Users can insert themselves" on public.users
+  for insert with check (owner_id = auth.jwt() ->> 'sub');
+
 create policy "Users can update themselves" on public.users
   for update using (owner_id = auth.jwt() ->> 'sub');
 
