@@ -7,7 +7,17 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "prepare": "husky"
+    "prepare": "husky",
+    "db:start": "supabase start -x gotrue,realtime,storage-api,imgproxy,edge-runtime,vector,logflare,mailpit",
+    "db:stop": "supabase stop",
+    "db:stop:all": "supabase stop --all",
+    "db:reset": "supabase db reset",
+    "db:diff": "supabase db diff -f change",
+    "db:shell": "docker exec -it supabase_db_daytrippr psql -U postgres -d postgres",
+    "db:seed:manual": "docker cp supabase/seed.sql supabase_db_daytrippr:/seed.sql && docker exec -it supabase_db_daytrippr psql -U postgres -d postgres -v ON_ERROR_STOP=1 -f /seed.sql",
+    "cloud:login": "supabase login",
+    "cloud:link": "supabase link --project-ref <your-project-ref>",
+    "cloud:push": "supabase db push"
   },
   "dependencies": {
     "@clerk/nextjs": "^6.18.0",

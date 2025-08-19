@@ -28,3 +28,5 @@ create policy "Users can delete their own trips" on public.trips
 -- Users can insert trips linked to themselves
 create policy "Users can insert trips for themselves" on public.trips
   for insert with check (owner_id = (auth.jwt() ->> 'sub')::text);
+
+create index if not exists trips_owner_id_idx on public.trips(owner_id);
