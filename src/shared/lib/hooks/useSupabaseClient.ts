@@ -1,7 +1,7 @@
 import { useAuth } from "@clerk/nextjs";
 import { createClient, SupabaseClient } from "@supabase/supabase-js";
 import { useMemo } from "react";
-import type { Database } from "../../../database.types";
+import type { Database } from "../../../../database.types";
 
 export default function useSupabaseClient(): SupabaseClient<Database> {
   const { getToken } = useAuth()
