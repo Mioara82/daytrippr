@@ -31,7 +31,9 @@ export default function RootLayout({
     <ClerkProvider>
       <html lang="en" suppressHydrationWarning>
         <body
-          className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+          className={`${geistSans.variable} ${geistMono.variable} antialiased  min-h-dvh
+          bg-gradient-to-br from-sky-100 via-white to-teal-100
+          dark:from-slate-800 dark:via-slate-900 dark:to-black`}
         >
           <ThemeProvider
             attribute="class"
@@ -39,8 +41,14 @@ export default function RootLayout({
             enableSystem
             disableTransitionOnChange
           >
-            <DesktopNavbar />
-            {children}
+            <div
+              className=" max-w-7xl mx-auto mt-4 mb-4 px-4 sm:px-6 lg:px-8 py-6
+              bg-background
+              backdrop-blur-md rounded-2xl shadow"
+            >
+              <DesktopNavbar />
+              {children}
+            </div>
           </ThemeProvider>
         </body>
       </html>
