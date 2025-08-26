@@ -20,14 +20,14 @@ const SearchInput = () => {
   }, []);
 
   return (
-    <div className="relative items-center hidden md:flex">
+    <div className="relative items-center flex">
       <Input
         ref={inputRef}
         type="text"
         placeholder="Search..."
-        className="max-w-xs"
+        className="max-w-20 md:max-w-xs placeholder:hidden md:placeholder:inline"
       />
-      <span className="text-secondary-foreground/50 absolute right-2 text-xs">
+      <span className="hidden md:block text-secondary-foreground/50 absolute right-2 text-xs">
         Ctrl K
       </span>
     </div>
