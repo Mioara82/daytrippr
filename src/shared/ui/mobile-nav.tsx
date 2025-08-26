@@ -8,11 +8,9 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
-import { useIsMobile } from "../lib/hooks/useIsMobile";
 import { ListBulletsIcon } from "@phosphor-icons/react/dist/csr/ListBullets";
 
 const MobileNav = () => {
-  const isMobile = useIsMobile(768);
 
   return (
       <Sheet>

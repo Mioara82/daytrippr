@@ -9,7 +9,7 @@ import {
 import { ModeToggle } from "@/shared/ui/theme-toggle-button";
 import { Button } from "@/components/ui/button";
 import SearchInput from "./input";
-import MobileNav from "./MobileNav";
+import MobileNav from "./mobile-nav";
 import { MapPinSimpleAreaIcon } from "@phosphor-icons/react/ssr";
 
 const DesktopNavbar = () => {
