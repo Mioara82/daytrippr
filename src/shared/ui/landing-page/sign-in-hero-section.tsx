@@ -1,5 +1,4 @@
 import Image from "next/image";
-import Link from "next/link";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { FileIcon, ShareNetworkIcon,HeartIcon, UsersIcon, MapTrifoldIcon, CalendarIcon } from "@phosphor-icons/react/dist/ssr";
@@ -74,7 +73,7 @@ export function SignInHeroSection() {
 
             <div className="flex flex-col sm:flex-row gap-4">
               <Button size="lg" className="flex-1">
-                Sign Up - It's Free!
+                Sign Up - It&apos;s Free!
               </Button>
               <Button variant="outline" size="lg" className="flex-1">
                 Continue as Guest
@@ -82,7 +81,7 @@ export function SignInHeroSection() {
             </div>
 
             <p className="text-sm text-muted-foreground text-center">
-              No commitment required. Start planning instantly, upgrade when you're ready.
+              No commitment required. Start planning instantly, upgrade when you&apos;re ready.
             </p>
           </div>
 

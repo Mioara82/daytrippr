@@ -23,7 +23,7 @@ export function CTASection() {
           </h2>
           
           <p className="text-xl md:text-2xl text-white/90 max-w-2xl mx-auto">
-            Join thousands of travelers who've discovered their next favorite destination with our intelligent trip planner.
+            Join thousands of travelers who have discovered their next favorite destination with our intelligent trip planner.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">

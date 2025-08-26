@@ -9,12 +9,10 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
-import { useIsMobile } from "../lib/hooks/useIsMobile";
 import { ListBulletsIcon } from "@phosphor-icons/react/dist/csr/ListBullets";
 import { MapPinSimpleAreaIcon } from "@phosphor-icons/react/dist/csr/MapPinSimpleArea";
 
 const MobileNav = () => {
-  const isMobile = useIsMobile(768);
 
   return (
     <div className="flex items-center justify-between gap-4">
