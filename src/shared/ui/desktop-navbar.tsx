@@ -14,35 +14,44 @@ import { MapPinSimpleAreaIcon } from "@phosphor-icons/react/ssr";
 
 const DesktopNavbar = () => {
   return (
-    <nav className="flex justify-between max-w-full items-center p-4 gap-4 h-16 ">
+    <nav className="flex justify-between max-w-full items-center p-4 gap-4 h-16">
       <div className="md:hidden">
         <MobileNav />{" "}
       </div>
-      <div className="md:flex items-center gap-2 hidden">
-        <MapPinSimpleAreaIcon
-          size={30}
-          color="var(--color-icon)"
-          weight="bold"
-        />
-        <span className="text-lg">Daytrippr</span>
+      <div className="flex items-center gap-2">
+        <Link href="/">
+          <MapPinSimpleAreaIcon
+            size={30}
+            color="var(--color-icon)"
+            weight="regular"
+          />
+        </Link>
+        <span className="hidden md:block text-lg">Daytrippr</span>
       </div>
       <SearchInput />
       <div className="flex items-center gap-2">
-        <Button asChild variant="default" size="default" className="hidden md:inline">
+        <Button
+          asChild
+          variant="default"
+          size="default"
+          className="hidden md:inline"
+        >
           <Link href="/dashboard" className="text-sm">
             Dashboard
           </Link>
         </Button>
-        <SignedOut>
-          <SignInButton />
-          <SignUpButton />
-        </SignedOut>
-        <SignedIn>
-          <UserButton />
-        </SignedIn>
-        <ModeToggle />
+        <div className="flex items-center gap-2">
+          <SignedOut>
+            <SignInButton />
+            <SignUpButton />
+          </SignedOut>
+          <SignedIn>
+            <UserButton />
+          </SignedIn>
+          <ModeToggle />
+        </div>
       </div>
-      <hr className="block md:hidden"/>
+      <hr className="block md:hidden" />
     </nav>
   );
 };
