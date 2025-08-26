@@ -8,7 +8,6 @@ import {
 } from "@clerk/nextjs";
 import { ModeToggle } from "@/shared/ui/theme-toggle-button";
 import { Button } from "@/components/ui/button";
-import SearchInput from "./input";
 import MobileNav from "./mobile-nav";
 import { MapPinSimpleAreaIcon } from "@phosphor-icons/react/ssr";
 
@@ -28,7 +27,6 @@ const DesktopNavbar = () => {
         </Link>
         <span className="hidden md:block text-lg">Daytrippr</span>
       </div>
-      <SearchInput />
       <div className="flex items-center gap-2">
         <Button
           asChild

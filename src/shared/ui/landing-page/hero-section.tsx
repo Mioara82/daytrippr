@@ -1,5 +1,11 @@
 import Image from "next/image";
-import { ArrowCircleRightIcon, MapPinIcon,ClockIcon,UsersIcon } from "@phosphor-icons/react/dist/ssr";
+import Link from "next/link";
+import {
+  ArrowCircleRightIcon,
+  MapPinIcon,
+  ClockIcon,
+  UsersIcon,
+} from "@phosphor-icons/react/dist/ssr";
 import { Button } from "@/components/ui/button";
 
 export function HeroSection() {
@@ -23,17 +29,24 @@ export function HeroSection() {
             Plan Your Perfect
             <span className="block text-primary">Day Trip</span>
           </h1>
-          
+
           <p className="text-xl md:text-2xl mb-8 text-gray-200 max-w-2xl mx-auto leading-relaxed">
-            Discover amazing destinations, create personalized itineraries, and make every moment count with our intelligent trip planner.
+            Discover amazing destinations, create personalized itineraries, and
+            make every moment count with our intelligent trip planner.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-            <Button size="lg" className="text-lg px-8 py-3 text-foreground">
-              Start Planning Now
-              <ArrowCircleRightIcon className="ml-2 h-5 w-5" />
-            </Button>
-            <Button variant="outline" size="lg" className="text-lg px-8 py-3 bg-white/10 border-white/20 text-white hover:bg-white/20">
+            <Link href="/dashboard/planner">
+              <Button size="lg" className="text-lg px-8 py-3 text-foreground">
+                Start Planning Now
+                <ArrowCircleRightIcon className="ml-2 h-5 w-5" />
+              </Button>
+            </Link>
+            <Button
+              variant="outline"
+              size="lg"
+              className="text-lg px-8 py-3 bg-white/10 border-white/20 text-white hover:bg-white/20"
+            >
               Explore Destinations
             </Button>
           </div>
@@ -45,23 +58,29 @@ export function HeroSection() {
                 <MapPinIcon className="h-6 w-6 text-blue-400" />
               </div>
               <h3 className="font-semibold mb-2">Smart Routing</h3>
-              <p className="text-sm text-gray-300">Optimize your route with AI-powered recommendations</p>
+              <p className="text-sm text-gray-300">
+                Optimize your route with AI-powered recommendations
+              </p>
             </div>
-            
+
             <div className="flex flex-col items-center text-center">
               <div className="bg-green-500/20 p-3 rounded-full mb-3">
                 <ClockIcon className="h-6 w-6 text-green-400" />
               </div>
               <h3 className="font-semibold mb-2">Time Management</h3>
-              <p className="text-sm text-gray-300">Perfect timing for every activity and destination</p>
+              <p className="text-sm text-gray-300">
+                Perfect timing for every activity and destination
+              </p>
             </div>
-            
+
             <div className="flex flex-col items-center text-center">
               <div className="bg-purple-500/20 p-3 rounded-full mb-3">
                 <UsersIcon className="h-6 w-6 text-purple-400" />
               </div>
               <h3 className="font-semibold mb-2">Share & Collaborate</h3>
-              <p className="text-sm text-gray-300">Plan together with friends, family, and travel companions</p>
+              <p className="text-sm text-gray-300">
+                Plan together with friends, family, and travel companions
+              </p>
             </div>
           </div>
         </div>
@@ -74,5 +93,5 @@ export function HeroSection() {
         </div>
       </div>
     </section>
-  )
+  );
 }
