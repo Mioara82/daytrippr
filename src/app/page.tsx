@@ -1,6 +1,6 @@
-import { HeroSection } from "@/shared/ui/landing-page/hero-section";
-import { CTASection } from "@/shared/ui/landing-page/CTA-section";
-import { SignInHeroSection } from "@/shared/ui/landing-page/sign-in-hero-section";
+import { HeroSection } from "@/app/ui/landing-page/hero-section";
+import { CTASection } from "@/app/ui/landing-page/CTA-section";
+import { SignInHeroSection } from "@/app/ui/landing-page/sign-in-hero-section";
 
 export default function Home() {
 	return (
