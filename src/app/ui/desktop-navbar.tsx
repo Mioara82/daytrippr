@@ -6,7 +6,7 @@ import {
   SignedOut,
   UserButton,
 } from "@clerk/nextjs";
-import { ModeToggle } from "@/shared/ui/theme-toggle-button";
+import { ModeToggle } from "@/app/ui/theme-toggle-button";
 import { Button } from "@/components/ui/button";
 import MobileNav from "./mobile-nav";
 import { MapPinSimpleAreaIcon } from "@phosphor-icons/react/ssr";

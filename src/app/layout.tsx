@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { ClerkProvider } from "@clerk/nextjs";
 import { ThemeProvider } from "./theme-switch";
 import { Roboto, Roboto_Mono } from "next/font/google";
-import DesktopNavbar from "@/shared/ui/desktop-navbar";
+import DesktopNavbar from "@/app/ui/desktop-navbar";
 import "./globals.css";
 
 const geistSans = Roboto({

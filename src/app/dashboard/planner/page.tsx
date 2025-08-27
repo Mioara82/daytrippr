@@ -4,7 +4,7 @@ import { useState, useRef } from "react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { MagnifyingGlassIcon } from "@phosphor-icons/react/dist/csr/MagnifyingGlass";
-import { useFocusShortcut } from "@/shared/lib/hooks/useFocusShortcut";
+import { useFocusShortcut } from "@/app/lib/hooks/useFocusShortcut";
 
 const Planner = () => {
   const [searchQuery, setSearchQuery] = useState<string>("");
