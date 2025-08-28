@@ -29,19 +29,19 @@ export async function GET(req: NextRequest) {
 
   const raw = await googleAutocomplete(body);
 
-  const destinations = raw.suggestions
+  const places = raw.suggestions
     .map((s) => s.placePrediction)
     .filter(Boolean)
     .map((p) => ({
       id: p!.placeId ?? p!.place!,
-      name: p!.structuredFormat?.mainText?.text ?? "",
+      name: p!.structuredFormat?.mainText?.text ?? p!.text?.text ?? "",
       secondaryText: p!.structuredFormat?.secondaryText?.text ?? "",
     }))
     .map((d) => placeSchema.parse(d));
 
   const payload = placeResponseSchema.parse({
     sessionToken,
-    places: destinations,
+    places,
   });
 
   return NextResponse.json(payload);

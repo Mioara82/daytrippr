@@ -18,7 +18,7 @@ export async function googleAutocomplete(body: AutocompleteRequest) {
         "Content-Type": "application/json",
         "X-Goog-Api-Key": process.env.GOOGLE_MAPS_API_KEY!,
         "X-Goog-FieldMask":
-          "suggestions.placePrediction.placeId,suggestions.placePrediction.structuredFormat.mainText.text,suggestions.placePrediction.structuredFormat.secondaryText.text",
+          "suggestions.placePrediction.placeId,suggestions.placePrediction.structuredFormat.mainText.text,suggestions.placePrediction.structuredFormat.secondaryText.text,suggestions.placePrediction.text.text",
       },
       body: JSON.stringify(body),
     }
