@@ -1,7 +1,7 @@
 // ...existing code...
 import { useState, useRef } from "react";
 import { Input } from "@/components/ui/input";
-import DialogWrapper from "./dialog-wrapper";
+import DialogWrapper from "./search-overlay";
 import { MagnifyingGlassIcon } from "@phosphor-icons/react/dist/csr/MagnifyingGlass";
 import { useFocusShortcut } from "@/app/lib/hooks/useFocusShortcut";
 
