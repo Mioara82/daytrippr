@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { ClerkProvider } from "@clerk/nextjs";
 import { ThemeProvider } from "./theme-switch";
+import { QueryProviders } from "./providers/query-provider";
 import { Roboto, Roboto_Mono } from "next/font/google";
 import DesktopNavbar from "@/app/ui/desktop-navbar";
 import "./globals.css";
@@ -41,14 +42,16 @@ export default function RootLayout({
             enableSystem
             disableTransitionOnChange
           >
-            <div
-              className=" max-w-7xl mx-auto mt-4 mb-4 px-4 sm:px-6 lg:px-8 py-6
+            <QueryProviders>
+              <div
+                className=" max-w-7xl mx-auto mt-4 mb-4 px-4 sm:px-6 lg:px-8 py-6
               bg-background
               backdrop-blur-md rounded-2xl shadow"
-            >
-              <DesktopNavbar />
-              {children}
-            </div>
+              >
+                <DesktopNavbar />
+                {children}
+              </div>
+            </QueryProviders>
           </ThemeProvider>
         </body>
       </html>
