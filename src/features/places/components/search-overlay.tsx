@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import { MagnifyingGlassIcon } from "@phosphor-icons/react/dist/csr/MagnifyingGlass";
 import { useDebounce } from "@/app/lib/hooks/useDebounce";
-import { usePlacesQuery } from "../usePlacesQuery";
+import { usePlacesQuery } from "../hooks/usePlacesQuery";
 import { usePlacesStore } from "../store";
 import type { Place } from "@/features/places/schemas";
 import {

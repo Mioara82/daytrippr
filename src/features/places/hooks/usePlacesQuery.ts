@@ -1,5 +1,5 @@
 import { useQuery, keepPreviousData } from "@tanstack/react-query";
-import { placeResponseSchema, type PlaceResponse } from "./schemas";
+import { placeResponseSchema, type PlaceResponse } from "../schemas";
 
 type UseSearchPlacesParams = {
   query: string; // pass your *debounced* value here
